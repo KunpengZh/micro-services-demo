@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "a node js component",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "kpzhang@cn.ibm.com",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "kafka-node": "^2.6.1",
+    "morgan": "~1.8.1",
+    "passport": "^0.4.0",
+    "serve-favicon": "~2.4.2",
+    "typescript": "^2.8.3"
+  }
+}

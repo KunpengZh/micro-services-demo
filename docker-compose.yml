@@ -1,0 +1,50 @@
+version: '2'
+services:
+  msgateway:
+    build:
+      context: ./openresty
+    image: msgateway
+    container_name: msgateway
+    # links:
+    #   - springboot202
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - DH_SIZE=512
+      - EXTERNAL_SECRET=YourExternalSecret
+      - INTERNAL_SECRET=YourInternalSecret
+      - JWT_SECRET=YourJWTSecret
+      - API_KEYS=YourApiKeys
+    volumes:
+      - ./openresty:/etc/nginx/conf.d/
+      - ./openresty:/usr/local/openresty/nginx/conf/
+      - ./openresty/confs:/usr/local/openresty/nginx/conf/confs
+      - ./vue-ui:/data
+      - ./openresty/lua-scripts:/usr/local/openresty/lua/
+  # springboot202:
+  #   image: springboot202
+  #   container_name: springboot202
+  #   ports:
+  #     - 8080:8080
+  #   environment:
+  #     - INTERNAL_SECRET=YourInternalSecret
+  #     - TRANSACTION_TIMEOUT=30
+  microkafka:
+    image: wurstmeister/kafka:latest
+    container_name: microkafka
+    hostname: microkafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_CREATE_TOPICS: "micromsg:1:1"
+      KAFKA_ZOOKEEPER_CONNECT: microzookeeper:2181
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  microzookeeper:
+    image: zookeeper:3.5
+    container_name: microzookeeper
+    ports:
+      - "2181:2181"

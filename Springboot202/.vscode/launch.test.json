@@ -1,0 +1,28 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "Springboot202",
+                "projectName": "Springboot202",
+                "workingDirectory": "/Users/kunpengzh/java/Springboot202",
+                "args": [],
+                "vmargs": [],
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "Springboot202",
+                "projectName": "Springboot202",
+                "workingDirectory": "/Users/kunpengzh/java/Springboot202",
+                "args": [],
+                "vmargs": [],
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

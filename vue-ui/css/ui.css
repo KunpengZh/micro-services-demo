@@ -1,0 +1,36 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.headerContainer {
+    background-color: #57A8FF;
+    font-size: 12px;
+    height: 70px;
+    width: 100%;
+    z-index: 1; 
+}
+.headerLogo {
+    float: left;
+    height: 65px;
+    width: 65px;
+    margin-top: 3px;
+    margin-left: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+}
+.headerPrimaryActionsLeading{
+    float: left;
+    height: 70px;
+    width: 365px;
+    margin-top: 3px;
+    margin-left: 25px;
+   line-height: 70px;
+    font-size: 22px;
+    font-weight: 800;
+    color: white;
+}
+.nodejs , .springboot202 {
+    margin: 10px;
+}

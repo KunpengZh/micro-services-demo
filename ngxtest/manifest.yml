@@ -1,0 +1,7 @@
+---
+applications:
+- instances: 1
+  timeout: 180
+  name: ngxtext
+  buildpack: nginx-buildpack
+  memory: 128M
